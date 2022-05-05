@@ -2,6 +2,7 @@ const express = require('express')
 // const { ExpressHandlebars } = require('express-handlebars')
 const { create } = require('express-handlebars')
 const { redirect } = require('express/lib/response')
+const PORT = process.env.PORT || 5000;
 
 const app = express()
 const hbs = create({
@@ -79,6 +80,6 @@ app.get('/contacto', (req,res) =>{
 
 // MIDDLEWARE
 app.use(express.static(__dirname + "/public"))
-app.listen(4000, () =>{
-    console.log('server on')
+app.listen(PORT, () =>{
+    console.log('server on', PORT)
 })
